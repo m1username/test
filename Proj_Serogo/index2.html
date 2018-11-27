@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl as vm">
+
+Name: <input type="text" ng-model="vm.user.name"><br>
+Email: <input type="text" ng-model="vm.user.email"><br>
+Phone: <input type="text" ng-model="vm.user.phone" only-digits><br>
+
+{{vm.user}}
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function() {
+	var vm = this;
+    vm.user =  {id: 1, name: "andrey", email: "some@mail.com", phone: ""};
+});
+</script>
+
+</body>
+</html>
